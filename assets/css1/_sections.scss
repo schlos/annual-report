@@ -1,0 +1,950 @@
+.section {
+  padding: 1em;
+
+  @media (min-width: $small-screen) {
+    margin-left: 8em;
+  }
+
+  @media (min-width: $medium-screen) {
+    margin-left: 10em;
+    padding: 1.5em;
+  }
+
+  @media (min-width: $large-screen) {
+    margin-left: 12em;
+    padding: 2em;
+  }
+
+  @media (min-width: $huge-screen) {
+    padding: 2.5em;
+  }
+
+  &:last-child {
+    padding-bottom: 5em;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+  }
+
+  & > :last-child,
+  & > :last-child > :last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $large-screen) {
+    & > * {
+      width: 66%;
+    }
+  }
+
+  @media (min-width: $huge-screen) {
+    & > * {
+      width: 50%;
+    }
+  }
+}
+
+@each $slug, $colour in $sections {
+  .page--#{$slug} {
+    background-color: $colour;
+    color: #fff;
+    @include coloured-links($colour);
+  }
+}
+
+.page--credits {
+  color: $colour_dark_grey;
+  a {
+    color: $colour_blue;
+
+    &:hover,
+    &:focus {
+      color: darken($colour_blue, 5%);
+    }
+  }
+}
+
+.section--one-half {
+  min-height: 300px;
+}
+
+.section--one-quarter {
+  min-height: 150px;
+}
+
+.section--three-quarters {
+  min-height: 450px;
+}
+
+@media (min-width: $medium-screen) and (min-height: 740px) {
+  .section--one-half {
+    min-height: 350px;
+  }
+
+  .section--one-quarter {
+    min-height: 175px;
+  }
+
+  .section--three-quarters {
+    min-height: 525px;
+  }
+}
+
+@media (min-width: $medium-screen) and (min-height: 840px) {
+  .section--one-half {
+    min-height: 400px;
+  }
+
+  .section--one-quarter {
+    min-height: 200px;
+  }
+
+  .section--three-quarters {
+    min-height: 600px;
+  }
+}
+
+.section--centred {
+  text-align: center;
+
+  & > * {
+    width: auto;
+  }
+}
+
+@media (min-width: $large-screen){
+  .section--punchline {
+    @include clearfix();
+
+    & > * {
+      clear: right;
+      float: right;
+    }
+  }
+}
+
+.section--impactful {
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  @media (min-width: $large-screen) {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+
+  @media (min-width: $huge-screen) {
+    padding-top: 7%;
+    padding-bottom: 7%;
+  }
+}
+
+%background-cover {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page--welcome .section {
+  @extend .section--centred;
+
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 24em;
+  }
+
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  @media (min-width: $medium-screen) and (min-height: 740px) {
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    p {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  &.section--we-are-mysociety {
+    padding-top: 5em;
+    padding-bottom: 5em;
+
+    @media (min-width: $medium-screen) and (min-height: 740px) {
+      padding-top: 6em;
+      padding-bottom: 6em;
+    }
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section--we-are-mysociety {
+  @extend %background-cover;
+  background-position: 50% 40%;
+  background-image: url(../img/team-purple.jpg);
+
+  h2 {
+    margin-bottom: 0.2em;
+    font-size: 3em;
+    line-height: 0.9em;
+  }
+
+  p {
+    color: mix(map-get($sections, 'welcome'), #fff, 20%);
+  }
+}
+
+.section--welcome-uk {
+  @extend %background-cover;
+  background-image: url(../img/pedestrians-green.jpg);
+  background-color: map-get($sections, 'uk');
+  @include coloured-links(map-get($sections, 'uk'));
+}
+
+.section--welcome-international {
+  @extend %background-cover;
+  background-image: url(../img/map-blue.gif);
+  background-color: map-get($sections, 'international');
+  @include coloured-links(map-get($sections, 'international'));
+}
+
+.section--welcome-software {
+  @extend %background-cover;
+  background-image: url(../img/code-orange.gif);
+  background-color: map-get($sections, 'pombola');
+  @include coloured-links(map-get($sections, 'pombola'));
+  text-shadow: 0 1px 3px darken(map-get($sections, 'pombola'), 15%);
+
+  .button {
+    text-shadow: none;
+  }
+}
+
+.section--welcome-commercial {
+  @extend %background-cover;
+  background-position: 50% 70%;
+  background-image: url(../img/mapumental-blue.jpg);
+  background-color: map-get($sections, 'commercial');
+  @include coloured-links(map-get($sections, 'commercial'));
+}
+
+.section--welcome-many-sides {
+  .slideshow {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+
+    @media (min-width: $medium-screen) and (min-height: 740px) {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.section--basics-uk {
+  @extend %background-cover;
+  background-position: 50% 60%;
+  background-image: url(../img/pairing-red.jpg);
+  text-align: center;
+
+  @media (min-width: $medium-screen){
+    h2 {
+      margin-top: 1.5em;
+    }
+  }
+}
+
+.section--basics-international {
+  @extend %background-cover;
+  background-position: 0% 50%;
+  background-image: url(../img/temple-red.jpg);
+  border-top: 1px solid darken($colour_red, 10%);
+  text-align: center;
+
+  @media (min-width: $medium-screen){
+    h2 {
+      margin-top: 1em;
+    }
+  }
+}
+
+.section--basics-employees {
+  @extend %background-cover;
+  background-position: 50% 30%;
+  background-image: url(../img/team-red.jpg);
+
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid darken($colour_red, 15%);
+
+  h2, p {
+    position: relative;
+    z-index: 1;
+  }
+
+  .chart__basics-employees {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    width: auto;
+  }
+}
+
+.section--basics-busy {
+  @extend %background-cover;
+  background-image: url(../img/coding-red.jpg);
+  border-top: 1px solid darken($colour_red, 15%);
+
+  h2 {
+    margin-bottom: 1em;
+  }
+}
+
+.section--basics-partisan {
+  text-align: center;
+
+  & > * {
+    width: auto;
+  }
+
+  .chart__partisan {
+    span {
+      display: block;
+      margin: 1em -2em 0 -2em;
+    }
+  }
+
+  .chart__partisan__wrapper {
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    margin: 1em 0;
+
+    @media (min-width: $large-screen) {
+      width: 15%;
+      height: 15%;
+      margin: 1em 5%;
+    }
+  }
+}
+
+.section--basics-agreement {
+  @extend %background-cover;
+  @extend .section--centred;
+  @extend .section--impactful;
+  background-color: mix(#000, $colour_red, 15%);
+  background-image: url(../img/popluscon-red.jpg);
+  background-position: 50% 30%;
+
+  h2 {
+    max-width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2em;
+  }
+}
+
+.section--international-meetings {
+  @extend %background-cover;
+  background-image: url(../img/map-blue.gif);
+  position: relative;
+
+  .stat {
+    position: absolute;
+    bottom: 1em;
+    margin-bottom: 0;
+
+    @media (min-width: $medium-screen) {
+      bottom: 1.5em;
+    }
+
+    @media (min-width: $large-screen) {
+      bottom: 2em;
+    }
+
+    @media (min-width: $huge-screen) {
+      bottom: 2.5em;
+    }
+  }
+}
+
+.section--international-1d-tour {
+  @extend %background-cover;
+  background-position: 50% 70%;
+  background-image: url(../img/1d-concert-blue.jpg);
+  background-color: mix($colour_blue, #000, 50%);
+  text-shadow: 0 1px 5px mix($colour_blue, #000, 50%);
+  border-top: 1px solid darken($colour_blue, 10%);
+}
+
+.section--international-anywhere {
+  position: relative;
+
+  .screenshot {
+    margin-bottom: -1em;
+
+    @media (min-width: $medium-screen) {
+      margin-bottom: -1.5em;
+    }
+
+    @media (min-width: $large-screen) {
+      margin-bottom: -2em;
+    }
+
+    @media (min-width: $huge-screen) {
+      position: absolute;
+      right: 2.5em;
+      width: 40%;
+      max-width: 500px;
+      bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.section--international-friends {
+  background-color: mix($colour_blue, #000, 50%);
+  border-bottom: 1px solid $colour_blue;
+  text-align: center;
+
+  & > * {
+    width: auto;
+  }
+
+  .slideshow {
+    height: 16em;
+  }
+}
+
+.section--international-silly {
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../img/1d-closeup-blue.jpg);
+}
+
+.section--international-share {
+  background-color: mix($colour_blue, #000, 65%);
+}
+
+.section--poplus-con {
+  @extend %background-cover;
+  background-image: url(../img/popluscon-green.jpg);
+}
+
+.section--poplus-mailing {
+  @extend .section--centred;
+  @extend .section--impactful;
+  background-color: darken(map-get($sections, 'poplus'), 10%);
+
+  h2 {
+    max-width: 26em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+.section--poplus-components {
+  @extend .section--impactful;
+  background-image: url(../img/components.png);
+  background-position: 10% 10%;
+  background-size: 250px 250px;
+}
+
+.section--poplus-grants {
+  @extend %background-cover;
+  background-color: #4f9444;
+  background-image: url(../img/poplus-lunch-green.jpg);
+  background-position: 50% 70%;
+}
+
+.section--alaveteli-countries {
+  position: relative;
+
+  .alaveteli-stamp {
+    width: 20%;
+    height: auto;
+    float: right;
+    margin-left: 1em;
+    @include prefix('transform', 'rotate(6deg)');
+
+    @media (min-width: $large-screen) {
+      position: absolute;
+      z-index: 2;
+      bottom: -0.5em;
+      right: 5%;
+      margin: 0;
+      width: 9em;
+    }
+
+    @media (min-width: $huge-screen) {
+      bottom: -1em;
+    }
+  }
+
+  .alaveteli-demo {
+    display: none;
+
+    @media (min-width: $huge-screen) {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 9%;
+      width: 19em;
+      height: auto;
+    }
+  }
+}
+
+.section--poplus-share {
+  background-color: darken(map-get($sections, 'poplus'), 5%);
+}
+
+.section--alaveteli-ukraine {
+  @extend .section--centred;
+  @extend .section--impactful;
+  @extend %background-cover;
+  background-image: url(../img/ukraine-violet.jpg);
+  background-color: darken(map-get($sections, 'alaveteli'), 10%);
+  border-top: 1px solid darken(map-get($sections, 'alaveteli'), 7%);
+  border-bottom: 1px solid darken(map-get($sections, 'alaveteli'), 7%);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.section--alaveteli-total {
+  padding-bottom: 0;
+
+  .slideshow {
+    width: auto;
+    margin-top: 2em;
+  }
+
+  .slideshow__inner {
+    &:after {
+      @extend %inner-shadow;
+    }
+  }
+
+  .slideshow__slide {
+    padding: 0;
+    position: relative;
+
+    &:nth-child(4n + 1) {
+      top: 1em;
+      margin-left: -4em;
+    }
+
+    &:nth-child(4n + 2) {
+      top: 2.5em;
+      margin-left: -3.5em;
+    }
+
+    &:nth-child(4n + 3) {
+      top: 1.5em;
+      margin-left: -6em;
+    }
+
+    &:nth-child(4n + 4) {
+      top: 3.5em;
+      margin-left: -4.5em;
+    }
+  }
+
+  .screenshot {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+
+    img {
+      border-top: 1px solid #ddd;
+    }
+  }
+}
+
+.section--alaveteli-share {
+  background-color: darken(map-get($sections, 'alaveteli'), 5%);
+}
+
+.section--alaveteli-silence {
+  background-color: darken(map-get($sections, 'alaveteli'), 5%);
+}
+
+.section--pombola-sites {
+  @extend %background-cover;
+  background-image: url(../img/za-parliament-orange.jpg);
+}
+
+.section--pombola-mission {
+  @extend .section--punchline;
+  @extend %background-cover;
+  background-image: url(../img/jacob-zuma-orange.jpg);
+  background-color: mix(map-get($sections, 'pombola'), #000, 90%);
+}
+
+.section--pombola-mzalendo-stats {
+  background-image: url(../img/pombola-mzalendo-graph.gif);
+  background-position: center bottom;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  padding-bottom: 12%; // based on aspect ratio of the background image
+}
+
+.section--pombola-share {
+  background-color: mix(map-get($sections, 'pombola'), #000, 90%);
+}
+
+.section--uk-users {
+  @extend %background-cover;
+  background-color: #447C3B; // a dark, slightly desaturated shade of the uk green
+  background-image: url(../img/uk-green.jpg);
+  text-shadow: 0 0px 20px darken(#447C3B, 5%);
+
+  .stat-columns {
+    margin-top: 9em;
+
+    p {
+      margin-bottom: 0;
+      margin-top: 1em;
+    }
+  }
+}
+
+.section--uk-one {
+  @extend .section--impactful;
+  @extend .section--centred;
+
+  h2 {
+    max-width: 25em;
+    margin: 0 auto;
+  }
+
+  .logo-lineup {
+    @extend %logo-lineup-hover-effect;
+    @extend %logo-lineup-padding-compensation;
+  }
+}
+
+.section--uk-writetothem {
+  @extend %background-cover;
+  background-color: darken($colour_green, 5%);
+  background-image: url(../img/leeds-town-hall.jpg);
+  background-position: 50% 40%;
+
+  .mps {
+    @include clearfix();
+    margin-top: 5em;
+    width: auto;
+  }
+
+  .survey {
+    font-size: 1em;
+    color: mix(darken($colour_green, 5%), #fff, 30%);
+    width: auto;
+  }
+
+  .mp {
+    margin-bottom: 2em;
+
+    @media (min-width: $large-screen) {
+      @include clearfix();
+      float: left;
+      width: 45%;
+
+      & + .mp {
+        margin-left: 2em;
+      }
+    }
+
+    @media (min-width: $huge-screen) {
+      width: 40%;
+      max-width: 20em;
+    }
+
+    img {
+      border-radius: 50%;
+      float: left;
+      margin-right: 0.7em;
+      width: 3em;
+      height: auto;
+    }
+
+    p {
+      line-height: 1.2em;
+    }
+  }
+
+  .mp__responsiveness {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .mp__name {
+    margin-bottom: 0;
+    font-weight: bold;
+    margin-top: 0.3em;
+    font-size: 1.4em;
+  }
+
+  .mp__constituency {
+    margin-bottom: 0;
+    color: mix(darken($colour_green, 5%), #fff, 20%);
+    font-size: 0.9em;
+  }
+}
+
+.section--uk-whatdotheyknow {
+  @extend %background-cover;
+  background-color: darken($colour_green, 10%);
+  background-image: url(../img/philip-schofield.jpg);
+  background-position: 50% 30%;
+}
+
+.section--uk-klingons {
+  @extend %background-cover;
+  background-color: #34652d;
+  background-image: url(../img/klingons-green.jpg);
+  background-position: 50% 0%;
+}
+
+.section--uk-share {
+  background-color: darken($colour_green, 5%);
+}
+
+.section--uk-twfy10 {
+  @extend .section--centred;
+
+  h2 {
+    margin-bottom: 0.2em;
+  }
+}
+
+.section--uk-twfy10__wrapper {
+  text-align: left;
+  display: inline-block;
+  padding: 0.5em 0 0 5em;
+  background: transparent url(../img/twfy-logo-green.gif) left top no-repeat;
+  background-size: auto 4.5em;
+}
+
+.section--uk-votes {
+  @extend %background-cover;
+  background-color: darken($colour_green, 10%);
+  background-image: url(../img/uk-votes-green.jpg);
+}
+
+.section--uk-scottish {
+  @extend %background-cover;
+  background-color: darken($colour_green, 5%);
+  background-image: url(../img/uk-scottish-green.jpg);
+}
+
+.section--commercial-too {
+  @extend %background-cover;
+  @extend .section--impactful;
+  @extend .section--centred;
+  background-image: url(../img/commercial-blue.jpg);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  p {
+    max-width: 29em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1, strong {
+    font-weight: 600;
+  }
+
+  .logo-lineup {
+    @extend %logo-lineup-hover-effect;
+    @extend %logo-lineup-padding-compensation;
+  }
+}
+
+.section--commercial-fms {
+  background-color: #3080B6; // dark, rich shade of commercial blue
+}
+
+.section--commercial-parliament {
+  @extend .section--punchline;
+  @extend %background-cover;
+  background-image: url(../img/parliament-blue.jpg);
+}
+
+.section--commercial-tools {
+  background-color: #4192C8; // slightly darker shade of commercial blue
+  position: relative;
+  overflow: hidden;
+
+  .screenshot {
+    display: none;
+
+    @media (min-width: $large-screen) {
+      display: block;
+      position: absolute;
+      top: 3em;
+      right: -8em;
+      width: 18em;
+      height: auto;
+    }
+
+    @media (min-width: $huge-screen) {
+      right: 8%;
+    }
+  }
+
+  &:after {
+    @extend %inner-shadow;
+    display: none;
+
+    @media (min-width: $large-screen) {
+      position: absolute;
+      display: block;
+      right: -8em;
+      bottom: 0;
+      left: auto;
+      width: 18em;
+    }
+
+    @media (min-width: $huge-screen) {
+      right: 8%;
+    }
+  }
+}
+
+.section--commercial-share {
+  background-color: #5EBEF1; // light tint of commercial blue
+  border-bottom: 1px solid #49A6D8;
+}
+
+.section--commercial-vikings {
+  @extend %background-cover;
+  background-image: url(../img/commercial-vikings.jpg);
+  background-position: 50% 20%;
+}
+
+.section--research-funding {
+  @extend %background-cover;
+  background-image: url(../img/research-network-diagram.jpg);
+}
+
+.section--research-opinions {
+  @extend .section--punchline;
+  @extend %background-cover;
+  background-color: mix(#000, $colour_red, 5%);
+  background-image: url(../img/research-red.jpg);
+}
+
+.section--research-partners {
+  @extend .section--centred;
+  background-color: mix(#000, $colour_red, 15%);
+
+  p {
+    max-width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  img {
+    margin: 1.2em 0 1.5em 0;
+  }
+
+  .research-logos-horizontal {
+    display: none;
+  }
+
+  @media (min-width: $huge-screen) {
+    .research-logos-horizontal {
+      display: inline-block;
+    }
+
+    .research-logos-vertical {
+      display: none;
+    }
+  }
+}
+
+.section--research-sharing {
+  @extend %background-cover;
+  background-image: url(../img/research-telescope.jpg);
+}
+
+.section--research-share {
+  background-color: mix(#000, $colour_red, 5%);
+}
+
+.page--future {
+  background-color: #000;
+}
+
+.section--future {
+  @extend %background-cover;
+  background-image: url(../img/future-purple.jpg);
+  background-color: #000;
+  background-size: 100%;
+  background-position: center top;
+
+  @media (min-width: $medium-screen) {
+    height: 100%;
+  }
+
+  & > * {
+    width: auto;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+    color: mix(map-get($sections, 'future'), #fff, 15%);
+  }
+
+  .special-thanks {
+    font-size: 1em;
+    margin-top: 2em;
+  }
+
+  .logo-lineup {
+    max-width: 30em;
+  }
+
+  .caption {
+    margin-top: 5em;
+    font-size: 0.8em;
+    max-width: 24em;
+    opacity: 0.6;
+
+    @media (min-width: $large-screen) and (min-height: 36em) {
+      position: absolute;
+      bottom: 3em;
+      margin-top: 0;
+    }
+  }
+}
+
+.page--future .page {
+  height: 100%;
+}
+
+.section--future__share {
+  margin-top: 2em;
+
+  * + * {
+    margin-left: 1em;
+  }
+}
