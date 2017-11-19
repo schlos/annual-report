@@ -1,7 +1,7 @@
-@import 'normalize';
-@import 'variables';
-@import 'mixins';
-@import 'font-awesome';
+@import 'normalize.css';
+@import 'variables.css';
+@import 'mixins.css';
+@import 'font-awesome.css';
 
 * {
   -moz-box-sizing: border-box;
@@ -144,9 +144,9 @@ textarea,
   max-width: 100%;
 }
 
-@import 'grid';
-@import 'buttons';
-@import 'components';
-@import 'sections';
-@import 'nav';
+@import 'grid.scss';
+@import 'buttons.scss';
+@import 'components.scss';
+@import 'sections.scss';
+@import 'nav.scss';
 
