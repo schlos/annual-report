@@ -1,4 +1,31 @@
-name: annualreport2014
+# Configurations
+markdown: kramdown
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+highlighter: rouge
+plugins:
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Needed for backward compatibility
+gems: 
+
+# Permalinks
+
+# Setup
+name:             annualreport2014
+title:            'Godišnji izvještaj'
+tagline:          '...'
+description:      '...'
+url:              '#TBD'
 baseurl:
 host: 0.0.0.0
-gems: ['jekyll/minibundle']
+
+# Author Details
+author:           'Code for Croatia'
+
+# Custom vars
+version:          0.1
+changenote:       'initial changes adapted by CfC'
+attribution:      'annual-report is made with love by MySociety'
