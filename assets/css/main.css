@@ -1,7 +1,7 @@
-@import 'normalize.css';
-@import 'variables.css';
-@import 'mixins.css';
-@import 'font-awesome.css';
+@import "_normalize.css";
+@import "_variables.css";
+@import "_mixins.css";
+@import "_font-awesome.css";
 
 * {
   -moz-box-sizing: border-box;
@@ -144,9 +144,9 @@ textarea,
   max-width: 100%;
 }
 
-@import 'grid.scss';
-@import 'buttons.scss';
-@import 'components.scss';
-@import 'sections.scss';
-@import 'nav.scss';
+@import '_grid.scss';
+@import '_buttons.scss';
+@import '_components.scss';
+@import '_sections.scss';
+@import '_nav.scss';
 
