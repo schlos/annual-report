@@ -1,7 +1,7 @@
-@import "_normalize.css";
-@import "_variables.css";
-@import "_mixins.css";
-@import "_font-awesome.css";
+@import url('/assets/css/_normalize.css.css');
+@import url('/assets/css/_variables.css.css');
+@import url('/assets/css/_mixins.css.css');
+@import url('/assets/css/_font-awesome.css.css');
 
 * {
   -moz-box-sizing: border-box;
