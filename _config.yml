@@ -14,10 +14,14 @@ gems:
 # Permalinks
 
 # Setup
-name:             annualreport2014
-title:            'Godišnji izvještaj'
-tagline:          '...'
-description:      '...'
+name:             annualreport2016
+title:            'godišnji izvještaj'
+tagline:          'Otvoreni za partnerstvo. Znamo kako.'
+description:      'Što su Otvoreni sustavi radili u 2016. godini i koji su bili rezultati pročitajte u godišnjem izvještaju'
+year:             '2016'
+organization:     'Hrvatska udruga za otvorene sustave i internet'
+org-short:        'Otvoreni sustavi'
+org-short-en:     'HrOpen'
 url:              '#TBD'
 baseurl:
 host: 0.0.0.0
@@ -27,5 +31,5 @@ author:           'Code for Croatia'
 
 # Custom vars
 version:          0.1
-changenote:       'initial changes adapted by CfC'
+changenote:       'changes adapted by CfC'
 attribution:      'annual-report is made with love by MySociety'
