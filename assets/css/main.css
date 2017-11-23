@@ -3544,18 +3544,18 @@ aside {
     display: block;
     text-indent: -9000px;
     width: 6em;
-    height: 1.3em;
+    height: 2em;
     background: transparent url(../img/hropen-logo.png) 0 0 no-repeat;
-    background-image: url(../img/mysociety-logo.svg), none;
+    /* background-image: url(../img/mysociety-logo.svg), none; */
     background-size: 100%; }
     .page--welcome .nav .logo {
       background-image: url(../img/hropen-logo.png);
-      background-image: url(../img/mysociety-logo-purple.svg), none; }
+      /* background-image: url(../img/mysociety-logo-purple.svg), none; */ }
     .nav .logo + small {
       display: block; }
   .nav .welcome a:hover .logo, .nav .welcome a:focus .logo {
     background-image: url(../img/hropen-logo.png);
-    background-image: url(../img/mysociety-logo-purple.svg), none; }
+    /* background-image: url(../img/mysociety-logo-purple.svg), none; */ }
   .nav .credits {
     border-bottom: none; }
     .nav .credits a {
